@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
     <template id="s_t4_brands" name="Taller4 Marcas">
+        <t t-set="t4_marcas" t-value="request.env['method_minori.marcas'].sudo().search([('active', '=', True), ('marca_imagen', '!=', False)], order='name asc', limit=8)"/>
         <section class="s_t4_brands t4-brands" data-snippet="s_t4_brands">
             <div class="t4-brands-inner">
                 <div class="t4-section-head centered">
@@ -8,51 +9,23 @@
                     <h2 class="t4-section-title">Diseño chileno, en <em>buena compañía</em></h2>
                 </div>
                 <div class="t4-brand-grid">
-                    <a class="t4-brand-cell" href="/shop" aria-label="Delfina">
-                        <div class="t4-brand-logo script">
-                            <span class="name">Delfina</span>
-                            <span class="tagline">Marca chilena</span>
-                        </div>
+                    <a t-foreach="t4_marcas" t-as="marca"
+                       class="t4-brand-cell"
+                       t-att-href="'/shop?marca_id=%s' % marca.id"
+                       t-att-aria-label="marca.name">
+                        <img class="t4-brand-img"
+                             t-att-src="'/web/image/method_minori.marcas/%s/marca_imagen' % marca.id"
+                             t-att-alt="marca.name"
+                             loading="lazy"/>
+                        <span class="t4-brand-name" t-esc="marca.name"/>
                     </a>
-                    <a class="t4-brand-cell" href="/shop" aria-label="Raiquen">
-                        <div class="t4-brand-logo condensed">
-                            <span class="name">Raiquen</span>
-                            <span class="tagline">Marca chilena</span>
-                        </div>
-                    </a>
-                    <a class="t4-brand-cell" href="/shop" aria-label="Provence">
-                        <div class="t4-brand-logo serif">
-                            <span class="name">Provence</span>
-                            <span class="tagline">Marca chilena</span>
-                        </div>
-                    </a>
-                    <a class="t4-brand-cell" href="/shop" aria-label="Evolve">
-                        <div class="t4-brand-logo thin">
-                            <span class="name">Evolve</span>
-                            <span class="tagline">Marca chilena</span>
-                        </div>
-                    </a>
-                    <a class="t4-brand-cell" href="/shop" aria-label="De Cleme">
-                        <div class="t4-brand-logo handwritten">
-                            <span class="name">De Cleme</span>
-                            <span class="tagline">Marca chilena</span>
-                        </div>
-                    </a>
-                    <a class="t4-brand-cell" href="/shop" aria-label="Other Owner">
-                        <div class="t4-brand-logo stack">
-                            <span class="name">Other Owner<b>RESALE</b></span>
-                        </div>
-                    </a>
-                    <a class="t4-brand-cell" href="/shop" aria-label="PJMS">
-                        <div class="t4-brand-logo boxed">
-                            <span class="name">PJMS</span>
-                        </div>
-                    </a>
-                    <a class="t4-brand-cell" href="/shop" aria-label="Ana Paula">
-                        <div class="t4-brand-logo bold">
-                            <span class="name">Ana Paula</span>
-                            <span class="tagline">Marca chilena</span>
-                        </div>
+                </div>
+                <div t-if="t4_marcas" class="t4-brands-cta">
+                    <a class="t4-section-link" href="/marcas">
+                        Ver todas las marcas
+                        <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="m9 6 6 6-6 6"/>
+                        </svg>
                     </a>
                 </div>
             </div>

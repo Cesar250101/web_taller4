@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="t4_product_ribbon_form_view" model="ir.ui.view">
+        <field name="name">product.ribbon.form.taller4</field>
+        <field name="model">product.ribbon</field>
+        <field name="inherit_id" ref="website_sale.product_ribbon_form_view"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='html']" position="before">
+                <field name="tipo" required="True"/>
+            </xpath>
+            <xpath expr="//sheet" position="inside">
+                <group string="Imagen">
+                    <field name="imagen" widget="image" class="oe_avatar"/>
+                </group>
+            </xpath>
+        </field>
+    </record>
+</odoo>

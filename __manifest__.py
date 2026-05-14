@@ -29,7 +29,9 @@
         'views/pages/marcas.xml',
         'views/pages/contacto.xml',
         'views/pages/devoluciones.xml',
+        'views/pages/coleccion_nuevo.xml',
         'views/website_sale_templates.xml',
+        'views/product_ribbon_views.xml',
     ],
     'assets': {
         'web.assets_frontend': [
@@ -53,6 +55,7 @@
             'web_taller4/static/src/scss/pages/marcas.scss',
             'web_taller4/static/src/scss/pages/contacto.scss',
             'web_taller4/static/src/scss/pages/doc.scss',
+            'web_taller4/static/src/scss/pages/coleccion_nuevo.scss',
             # eCommerce override
             'web_taller4/static/src/scss/website_sale.scss',
             # JavaScript

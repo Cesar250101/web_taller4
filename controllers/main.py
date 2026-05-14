@@ -13,6 +13,18 @@ class Taller4Marcas(http.Controller):
         )
         return request.render('web_taller4.t4_marcas_page', {'marcas': marcas})
 
+    @http.route(['/coleccion/nuevo'], type='http', auth='public', website=True, sitemap=True)
+    def coleccion_nuevo(self, **kw):
+        ribbons = request.env['product.ribbon'].sudo().search([('tipo', '=', 'nuevo')])
+        productos = request.env['product.template'].sudo().search([
+            ('website_ribbon_id', 'in', ribbons.ids),
+            ('website_published', '=', True),
+        ], order='create_date desc')
+        return request.render('web_taller4.t4_coleccion_nuevo_page', {
+            'productos': productos,
+            'ribbon': ribbons[:1],
+        })
+
 
 class WebsiteSaleMarca(WebsiteSale):
 

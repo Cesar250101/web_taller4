@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="t4_coleccion_nuevo_page" name="Taller4 — Nueva Colección">
+        <t t-call="website.layout">
+            <t t-set="pageName" t-value="'coleccion-nuevo'"/>
+            <div id="wrap" class="t4-site">
+                <section class="t4-coleccion">
+                    <div class="t4-coleccion-inner">
+                        <nav class="t4-breadcrumb">
+                            <a href="/taller4">Inicio</a>
+                            <span class="sep">/</span>
+                            <span class="current">Nueva Colección</span>
+                        </nav>
+
+                        <div class="t4-coleccion-head">
+                            <div class="t4-section-eyebrow">Lo último en llegar</div>
+                            <h1 class="t4-coleccion-title">Nueva <em>Colección</em></h1>
+                            <p class="t4-coleccion-sub">Las piezas más recientes incorporadas al taller. Marcas chilenas con diseño, carácter e historia.</p>
+                        </div>
+
+                        <t t-if="productos">
+                            <div class="t4-coleccion-grid">
+                                <a t-foreach="productos" t-as="prod"
+                                   class="t4-coleccion-card"
+                                   t-att-href="'/shop/%s-%s' % (prod.name and prod.name.lower().replace(' ', '-') or 'producto', prod.id)">
+                                    <div class="t4-coleccion-img">
+                                        <img t-att-src="'/web/image/product.template/%s/image_1024' % prod.id"
+                                             t-att-alt="prod.name"
+                                             loading="lazy"/>
+                                        <span t-if="ribbon and ribbon.html"
+                                              class="t4-coleccion-ribbon"
+                                              t-att-style="'background:%s;color:%s' % (ribbon.bg_color or '#C8714A', ribbon.text_color or '#FFFFFF')">
+                                            <t t-out="ribbon.html"/>
+                                        </span>
+                                    </div>
+                                    <div class="t4-coleccion-info">
+                                        <span t-if="prod.marca_id" class="t4-coleccion-marca" t-esc="prod.marca_id.name"/>
+                                        <h3 class="t4-coleccion-name" t-esc="prod.name"/>
+                                        <span class="t4-coleccion-price"
+                                              t-esc="prod.list_price"
+                                              t-options="{'widget': 'monetary', 'display_currency': prod.currency_id}"/>
+                                    </div>
+                                </a>
+                            </div>
+                        </t>
+                        <t t-else="">
+                            <p class="t4-coleccion-empty">Aún no hay productos marcados como nuevos. Asigna la cinta tipo "¡Nuevo!" a un producto para verlo aquí.</p>
+                        </t>
+                    </div>
+                </section>
+            </div>
+        </t>
+    </template>
+
+</odoo>
