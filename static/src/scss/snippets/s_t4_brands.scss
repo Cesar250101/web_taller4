@@ -1,0 +1,98 @@
+// ---- Marcas Grid ----
+.s_t4_brands.t4-brands {
+    background: var(--t4-warm-cream);
+
+    .t4-brands-inner {
+        max-width: var(--t4-page-max);
+        margin: 0 auto;
+        padding: clamp(56px, 8vw, 96px) var(--t4-page-pad);
+    }
+
+    .t4-brand-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        border-top: 1px solid var(--t4-border);
+        border-left: 1px solid var(--t4-border);
+        margin-top: 40px;
+
+        @media (max-width: 1100px) { grid-template-columns: repeat(3, 1fr); }
+        @media (max-width: 820px) { grid-template-columns: repeat(2, 1fr); }
+    }
+
+    .t4-brand-cell {
+        border-right: 1px solid var(--t4-border);
+        border-bottom: 1px solid var(--t4-border);
+        height: 130px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: var(--t4-paper);
+        cursor: pointer;
+        text-decoration: none;
+        transition: background 0.2s;
+        padding: 16px;
+        position: relative;
+        overflow: hidden;
+
+        &:hover { background: var(--t4-warm-cream); }
+
+        &::after {
+            content: 'Ver marca →';
+            position: absolute;
+            inset: auto 0 0 0;
+            background: var(--t4-ink-900);
+            color: white;
+            font: 700 var(--t4-fs-12) / 1 var(--t4-font-sans);
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            padding: 10px;
+            text-align: center;
+            transform: translateY(100%);
+            transition: transform 0.25s cubic-bezier(0.2, 0, 0, 1);
+        }
+
+        &:hover::after { transform: translateY(0); }
+    }
+
+    .t4-brand-logo {
+        text-align: center;
+        line-height: 1;
+
+        .name { display: block; }
+
+        .tagline {
+            display: block;
+            font: 400 9px / 1 var(--t4-font-sans);
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: var(--t4-fg-muted);
+            margin-top: 6px;
+        }
+
+        &.script .name { font: italic 700 28px / 1 Georgia, serif; color: var(--t4-ink-800); }
+        &.condensed .name { font: 700 22px / 1 var(--t4-font-display); letter-spacing: 0.18em; text-transform: uppercase; color: var(--t4-ink-800); }
+        &.bold .name { font: 900 24px / 1 var(--t4-font-sans); letter-spacing: 0.02em; text-transform: uppercase; color: var(--t4-ink-800); }
+        &.thin .name { font: 300 26px / 1 var(--t4-font-sans); letter-spacing: 0.32em; text-transform: uppercase; color: var(--t4-ink-800); }
+        &.serif .name { font: 400 26px / 1 Georgia, serif; letter-spacing: 0.04em; color: var(--t4-ink-800); }
+        &.handwritten .name { font: italic 400 28px / 1 cursive; color: var(--t4-ink-800); }
+
+        &.stack .name {
+            font: 700 18px / 1 var(--t4-font-sans);
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+            color: var(--t4-ink-800);
+
+            b { display: block; font: 700 14px / 1.6 var(--t4-font-sans); letter-spacing: 0.32em; }
+        }
+
+        &.boxed .name {
+            display: inline-block;
+            border: 2px solid var(--t4-ink-800);
+            font: 900 16px / 1 var(--t4-font-sans);
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+            color: var(--t4-ink-800);
+            padding: 8px 14px;
+        }
+    }
+}

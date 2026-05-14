@@ -1,0 +1,71 @@
+// ---- Sección shell y helpers comunes ----
+.t4-section {
+    max-width: var(--t4-page-max);
+    margin: 0 auto;
+    padding: clamp(56px, 8vw, 96px) var(--t4-page-pad);
+
+    &.tight {
+        padding-top: clamp(40px, 5vw, 56px);
+        padding-bottom: clamp(40px, 5vw, 56px);
+    }
+}
+
+.t4-section-head {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    margin-bottom: 40px;
+    gap: 24px;
+
+    &.centered {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+}
+
+.t4-section-eyebrow {
+    font: 700 var(--t4-fs-12) / 1 var(--t4-font-sans);
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--t4-accent);
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 12px;
+
+    &::before {
+        content: '';
+        width: 28px;
+        height: 1px;
+        background: var(--t4-accent);
+    }
+
+    .t4-section-head.centered &::before { display: none; }
+}
+
+.t4-section-title {
+    font: 700 clamp(28px, 3.4vw, 40px) / 1.15 var(--t4-font-sans);
+    letter-spacing: -0.01em;
+    color: var(--t4-fg-strong);
+    margin: 0;
+
+    em { font-style: normal; color: var(--t4-accent); }
+}
+
+.t4-section-link {
+    font: 700 var(--t4-fs-13) / 1 var(--t4-font-sans);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--t4-fg-strong);
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    white-space: nowrap;
+    padding-bottom: 4px;
+    border-bottom: 1px solid var(--t4-ink-800);
+    text-decoration: none;
+    transition: color 0.15s, border-color 0.15s, gap 0.15s;
+
+    &:hover { color: var(--t4-accent); border-color: var(--t4-accent); gap: 12px; }
+}

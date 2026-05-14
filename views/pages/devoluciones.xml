@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="t4_devoluciones_page" name="Taller4 — Cambios y Devoluciones">
+        <t t-call="website.layout">
+            <t t-set="pageName" t-value="'devoluciones'"/>
+            <div id="wrap" class="t4-site">
+                <section class="t4-doc">
+                    <div class="t4-doc-inner">
+                        <nav class="t4-breadcrumb">
+                            <a href="/taller4">Inicio</a>
+                            <span class="sep">/</span>
+                            <span class="current">Cambios y Devoluciones</span>
+                        </nav>
+
+                        <h1 class="t4-doc-title">Cambios y Devoluciones</h1>
+                        <hr class="t4-doc-divider"/>
+
+                        <ul class="t4-doc-list">
+                            <li>30 días para el cambio</li>
+                            <li>El cambio se puede realizar siempre cuando el cliente presente su boleta, ticket de cambio o comprobante de compra.</li>
+                            <li>Todo producto se podrá cambiar siempre y cuando se encuentre en las mismas condiciones que fue adquirido, es decir, sin uso, sin modificaciones y con sus etiquetas correspondientes.</li>
+                            <li>Además, se debe entregar todos sus accesorios, manuales y pólizas de garantía, si hubieren sido incluidos en el despacho del mismo.</li>
+                            <li>Cumplidas las condiciones antes establecidas en el caso de cambio de productos sólo podrá realizarse por el mismo producto o uno de valor igual o superior, en cuyo caso deberá, previo al cambio pagarse la diferencia de precio si es del caso.</li>
+                        </ul>
+
+                        <p class="t4-doc-callout">Se aceptan cambios de productos sólo por la misma marca.</p>
+
+                        <ul class="t4-doc-list">
+                            <li>No se realizan devoluciones de dinero.</li>
+                            <li>Los gastos de envíos y retiro del producto en caso de devolución, correrán por cuenta del cliente.</li>
+                            <li>Aros: No tienen cambio por normativa de higiene.</li>
+                            <li>Calzones: no tienen cambio por normativa de higiene.</li>
+                            <li>Los cambios de productos en oferta, se considerará el precio pagado una vez realizada la compra.</li>
+                            <li>Trajes de Baño, Bikinis y Bralettes: Sólo se podrán cambiar si es que el producto viene limpio en perfectas condiciones y con todas las etiquetas correspondientes.</li>
+                            <li>Sin perjuicio de lo anterior, el consumidor gozará de todos los derechos que le reconoce la legislación chilena sobre protección al consumidor vigente a la época de la celebración del contrato, con la salvedad de las exclusiones expresamente contenidas en estos términos y condiciones.</li>
+                        </ul>
+
+                        <!-- Newsletter inferior (mismo bloque que /contacto) -->
+                        <div class="t4-contact-newsletter">
+                            <div class="t4-contact-newsletter-text">
+                                <h2>INSCRÍBETE EN NUESTRO NEWSLETTER</h2>
+                                <p>¡Sé el primero en enterarte de los descuentos, beneficios y concursos!</p>
+                            </div>
+                            <div class="t4-contact-newsletter-form">
+                                <form action="/website_mass_mailing/subscribe" method="post"
+                                      class="t4-newsletter-inline">
+                                    <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()"/>
+                                    <input type="email" name="email" required="required"
+                                           placeholder="Introduce la dirección de correo electrónico"/>
+                                    <button type="submit">Unirse</button>
+                                </form>
+                                <div class="t4-contact-social">
+                                    <a href="https://facebook.com/taller4chile" aria-label="Facebook" target="_blank" rel="noopener">
+                                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M14 13.5h2.5l1-4H14V7c0-1 .5-2 2-2h2V1.5S16 1 14.5 1C11 1 9 3 9 6v3.5H6V13.5h3V22h5z"/></svg>
+                                    </a>
+                                    <a href="https://instagram.com/taller4chile" aria-label="Instagram" target="_blank" rel="noopener">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                            <rect x="3" y="3" width="18" height="18" rx="4"/>
+                                            <circle cx="12" cy="12" r="4"/>
+                                            <circle cx="17.5" cy="6.5" r="0.6" fill="currentColor"/>
+                                        </svg>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </t>
+    </template>
+
+    <record id="t4_devoluciones_page_record" model="website.page">
+        <field name="name">Taller4 Cambios y Devoluciones</field>
+        <field name="url">/cambios-y-devoluciones</field>
+        <field name="view_id" ref="t4_devoluciones_page"/>
+        <field name="website_id" ref="website_taller4"/>
+        <field name="is_published">True</field>
+    </record>
+</odoo>

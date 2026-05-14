@@ -1,0 +1,44 @@
+// ============================================================
+// Páginas de documento (Cambios y Devoluciones, T&C, etc.)
+// ============================================================
+.t4-doc {
+    background: var(--t4-paper);
+    padding: clamp(32px, 5vw, 56px) var(--t4-page-pad) clamp(40px, 6vw, 72px);
+}
+
+.t4-doc-inner {
+    max-width: 1080px;
+    margin: 0 auto;
+}
+
+.t4-doc-title {
+    font: 700 clamp(24px, 3vw, 32px) / 1.15 var(--t4-font-sans);
+    color: var(--t4-ink-900);
+    margin: 0 0 12px;
+}
+
+.t4-doc-divider {
+    border: 0;
+    border-top: 1px solid var(--t4-border);
+    margin: 0 0 32px;
+}
+
+.t4-doc-list {
+    list-style: disc outside;
+    padding-left: 22px;
+    margin: 0 0 24px;
+
+    li {
+        font: 400 var(--t4-fs-14) / 1.6 var(--t4-font-sans);
+        color: var(--t4-fg);
+        margin-bottom: 8px;
+
+        &::marker { color: var(--t4-fg-strong); }
+    }
+}
+
+.t4-doc-callout {
+    font: 400 var(--t4-fs-14) / 1.6 var(--t4-font-sans);
+    color: var(--t4-fg-strong);
+    margin: 0 0 24px;
+}

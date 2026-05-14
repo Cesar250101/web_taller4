@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Inyecta Google Fonts en el <head> de todas las páginas del sitio Taller4 -->
+    <template id="t4_google_fonts" inherit_id="website.layout" name="Taller4 Google Fonts">
+        <xpath expr="//head" position="inside">
+            <t t-if="website and website.name == 'Taller4'">
+                <link rel="preconnect" href="https://fonts.googleapis.com"/>
+                <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous"/>
+                <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;0,900;1,400;1,700&amp;family=Oswald:wght@300;400;500;600;700&amp;family=IBM+Plex+Mono:wght@400;500&amp;display=swap"/>
+            </t>
+        </xpath>
+    </template>
+
+    <!-- Marca el body con la clase t4-body cuando estamos en el sitio Taller4 -->
+    <template id="t4_body_class" inherit_id="website.layout" name="Taller4 Body Class">
+        <xpath expr="//div[@id='wrapwrap']" position="attributes">
+            <attribute name="t-attf-class" add="#{'t4-body' if (website and website.name == 'Taller4') else ''}" separator=" "/>
+        </xpath>
+    </template>
+</odoo>

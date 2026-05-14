@@ -1,0 +1,233 @@
+// ============================================================
+// Taller4 — website_sale.scss
+// Solo restyling visual de la tienda, sin tocar lógica.
+// Todos los selectores van dentro de .t4-shop-wrapper para
+// no afectar otros websites en la misma instancia Odoo.
+// ============================================================
+
+// Encabezado de marca (cuando se filtra /shop?marca_id=X)
+.t4-shop-marca-head {
+    background: var(--t4-warm-cream);
+    border-bottom: 1px solid var(--t4-border);
+    padding: 32px var(--t4-page-pad);
+    margin: 0 0 32px;
+}
+
+.t4-shop-marca-back {
+    display: inline-block;
+    margin-bottom: 16px;
+    font: 700 var(--t4-fs-12) / 1 var(--t4-font-sans);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--t4-fg-faint);
+    text-decoration: none;
+    transition: color 0.15s;
+
+    &:hover { color: var(--t4-accent); }
+}
+
+.t4-shop-marca-inner {
+    max-width: var(--t4-page-max);
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    gap: 28px;
+
+    @media (max-width: 600px) {
+        flex-direction: column;
+        text-align: center;
+        gap: 16px;
+    }
+}
+
+.t4-shop-marca-img {
+    width: 96px;
+    height: 96px;
+    object-fit: contain;
+    background: var(--t4-paper);
+    border: 1px solid var(--t4-border);
+    padding: 8px;
+    flex-shrink: 0;
+}
+
+.t4-shop-marca-text { display: flex; flex-direction: column; gap: 6px; }
+
+.t4-shop-marca-eyebrow {
+    font: 700 var(--t4-fs-12) / 1 var(--t4-font-sans);
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--t4-accent);
+}
+
+.t4-shop-marca-title {
+    font: 700 clamp(24px, 3vw, 36px) / 1.15 var(--t4-font-sans);
+    color: var(--t4-fg-strong);
+    margin: 0;
+
+    em { font-style: normal; color: var(--t4-accent); }
+}
+
+// Marca en tarjeta de producto
+.t4-card-marca {
+    margin-bottom: 4px;
+
+    a {
+        font: 700 var(--t4-fs-12) / 1 var(--t4-font-sans);
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: var(--t4-accent);
+        text-decoration: none;
+        transition: color 0.15s;
+
+        &:hover { color: var(--t4-accent-strong); text-decoration: underline; }
+    }
+}
+
+.t4-shop-wrapper {
+    font-family: var(--t4-font-sans);
+
+    // ---- Shop listing ----
+    #products_grid .o_wsale_product_grid_wrapper {
+        .oe_product_cart {
+            border: 0;
+            border-radius: 0;
+            box-shadow: none;
+
+            .oe_product_image {
+                aspect-ratio: 4 / 5;
+                overflow: hidden;
+                background: var(--t4-ink-100);
+                border-radius: 0;
+
+                img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                    transition: transform 0.5s cubic-bezier(0.2, 0, 0, 1);
+                }
+
+                &:hover img { transform: scale(1.03); }
+            }
+
+            .oe_product_details {
+                padding: 14px 0 0;
+
+                .product_name {
+                    font: 400 var(--t4-fs-15) / 1.4 var(--t4-font-sans);
+                    color: var(--t4-fg-strong);
+                    margin-bottom: 8px;
+                }
+
+                .oe_currency_value,
+                .price {
+                    font: 700 var(--t4-fs-16) / 1 var(--t4-font-sans);
+                    color: var(--t4-fg-strong);
+                }
+
+                del {
+                    font-size: var(--t4-fs-13);
+                    color: var(--t4-fg-faint);
+                }
+            }
+
+            .o_wsale_product_btn .btn-primary {
+                background: var(--t4-ink-900);
+                border: 0;
+                border-radius: 0;
+                font: 700 var(--t4-fs-13) / 1 var(--t4-font-sans);
+                letter-spacing: 0.06em;
+                text-transform: uppercase;
+                padding: 12px 16px;
+                width: 100%;
+                transition: background 0.15s;
+
+                &:hover { background: var(--t4-accent); }
+            }
+        }
+    }
+
+    // ---- Filtros de categorías ----
+    .o_wsale_products_searchbar {
+        border-radius: 0;
+
+        input {
+            border-radius: 0;
+            font-family: var(--t4-font-sans);
+        }
+
+        .btn {
+            border-radius: 0;
+            background: var(--t4-ink-900);
+            border-color: var(--t4-ink-900);
+            color: white;
+
+            &:hover { background: var(--t4-accent); border-color: var(--t4-accent); }
+        }
+    }
+
+    // ---- Página de producto ----
+    #product_detail {
+        .product_detail_img {
+            border-radius: 0;
+        }
+
+        .product-name {
+            font: 700 clamp(24px, 3vw, 36px) / 1.15 var(--t4-font-sans);
+            color: var(--t4-fg-strong);
+        }
+
+        .product_price {
+            font: 700 var(--t4-fs-24) / 1 var(--t4-font-sans);
+            color: var(--t4-fg-strong);
+        }
+
+        .a-submit.btn-primary,
+        #add_to_cart {
+            background: var(--t4-accent);
+            border: 0;
+            border-radius: 0;
+            font: 700 var(--t4-fs-14) / 1 var(--t4-font-sans);
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+            padding: 16px 32px;
+            transition: background 0.15s;
+
+            &:hover { background: var(--t4-accent-strong); }
+        }
+    }
+
+    // ---- Carrito ----
+    .o_cart_product {
+        border-bottom: 1px solid var(--t4-border);
+        border-radius: 0;
+
+        .td-product_name { font-family: var(--t4-font-sans); }
+        .td-price { font: 700 var(--t4-fs-16) / 1 var(--t4-font-sans); color: var(--t4-fg-strong); }
+    }
+
+    .o_cart_summary {
+        border: 1px solid var(--t4-border);
+        border-radius: 0;
+        background: var(--t4-ink-100);
+
+        .btn-primary {
+            background: var(--t4-accent);
+            border: 0;
+            border-radius: 0;
+            font: 700 var(--t4-fs-14) / 1 var(--t4-font-sans);
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+            padding: 16px 24px;
+
+            &:hover { background: var(--t4-accent-strong); }
+        }
+    }
+
+    // ---- Checkout ----
+    .o_payment_form .o_payment_option_card {
+        border-radius: 0;
+        border: 1px solid var(--t4-border);
+
+        &.selected { border-color: var(--t4-accent); }
+    }
+}

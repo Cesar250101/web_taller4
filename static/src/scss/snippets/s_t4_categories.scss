@@ -1,0 +1,83 @@
+// ---- Categorías ----
+.s_t4_categories.t4-section {
+    .t4-cats {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 32px 24px;
+
+        @media (max-width: 820px) { grid-template-columns: repeat(2, 1fr); }
+    }
+
+    .t4-cat {
+        display: flex;
+        flex-direction: column;
+        gap: 14px;
+        text-decoration: none;
+        color: inherit;
+
+        .t4-cat-img {
+            position: relative;
+            aspect-ratio: 4 / 3;
+            overflow: hidden;
+            background: var(--t4-ink-100);
+
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                transition: transform 0.5s cubic-bezier(0.2, 0, 0, 1);
+            }
+
+            &::after {
+                content: '';
+                position: absolute;
+                inset: 0;
+                background: linear-gradient(180deg, transparent 60%, rgba(0, 0, 0, 0.15) 100%);
+                pointer-events: none;
+            }
+        }
+
+        &:hover .t4-cat-img img { transform: scale(1.04); }
+
+        .t4-cat-label {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 2px;
+
+            > div span {
+                font: 700 var(--t4-fs-18) / 1.2 var(--t4-font-sans);
+                letter-spacing: 0.01em;
+                color: var(--t4-fg-strong);
+                display: block;
+            }
+        }
+
+        .t4-cat-count {
+            font: 400 var(--t4-fs-12) / 1 var(--t4-font-sans);
+            color: var(--t4-fg-muted);
+            letter-spacing: 0.04em;
+            margin-top: 4px;
+        }
+
+        .t4-cat-arrow {
+            width: 28px;
+            height: 28px;
+            border: 1px solid var(--t4-ink-800);
+            border-radius: 999px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            transition: background 0.15s, color 0.15s, transform 0.15s;
+
+            svg { width: 12px; height: 12px; stroke: currentColor; fill: none; stroke-width: 2; }
+        }
+
+        &:hover .t4-cat-arrow {
+            background: var(--t4-accent);
+            border-color: var(--t4-accent);
+            color: white;
+        }
+    }
+}

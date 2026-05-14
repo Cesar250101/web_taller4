@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="t4_home" name="Taller4 — Home" key="web_taller4.t4_home" track="1">
+        <t t-call="website.layout">
+            <t t-set="pageName" t-value="'homepage'"/>
+            <div id="wrap" class="t4-site">
+
+                <!-- Heart Strip -->
+                <div class="t4-heart-strip">
+                    Desde Chile con <span class="heart">❤</span> amor
+                    <span class="sep">·</span>
+                    Despacho a todo Chile
+                    <span class="sep">·</span>
+                    Más de 20 marcas locales
+                </div>
+
+                <!-- Announce Bar -->
+                <div class="t4-announce">
+                    <span class="t4-announce-item">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <path d="M3 7h13v9H3zM16 10h4l2 3v3h-6M6 19a2 2 0 1 0 0-4 2 2 0 0 0 0 4zM18 19a2 2 0 1 0 0-4 2 2 0 0 0 0 4z"/>
+                        </svg>
+                        Despacho gratis sobre <em>$59.990</em>
+                    </span>
+                    <span class="t4-announce-item">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                        </svg>
+                        Compra <em>100% segura</em>
+                    </span>
+                    <span class="t4-announce-item">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+                            <circle cx="12" cy="10" r="3"/>
+                        </svg>
+                        Desde <em>Santiago, Chile</em>
+                    </span>
+                </div>
+
+                <!-- Área editable: aquí el editor permite arrastrar/quitar snippets -->
+                <div class="oe_structure" id="oe_structure_t4_home_main">
+                    <t t-call="web_taller4.s_t4_hero"/>
+                    <t t-call="web_taller4.s_t4_categories"/>
+                    <t t-call="web_taller4.s_t4_top_sellers"/>
+                    <t t-call="web_taller4.s_t4_value"/>
+                    <t t-call="web_taller4.s_t4_mid_banner"/>
+                    <t t-call="web_taller4.s_t4_brands"/>
+                    <t t-call="web_taller4.s_t4_spotlight"/>
+                    <t t-call="web_taller4.s_t4_instagram"/>
+                    <t t-call="web_taller4.s_t4_newsletter"/>
+                </div>
+
+            </div>
+        </t>
+    </template>
+
+    <record id="t4_home_page" model="website.page">
+        <field name="name">Taller4 Home</field>
+        <field name="url">/taller4</field>
+        <field name="view_id" ref="t4_home"/>
+        <field name="website_id" ref="website_taller4"/>
+        <field name="is_published">True</field>
+    </record>
+</odoo>

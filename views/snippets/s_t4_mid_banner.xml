@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="s_t4_mid_banner" name="Taller4 Banner Editorial">
+        <section class="s_t4_mid_banner t4-banner" data-snippet="s_t4_mid_banner">
+            <div class="t4-banner-inner">
+                <div class="t4-banner-photo"
+                     style="background-image: url('/web_taller4/static/src/img/banner-pyjama.jpg');"
+                     role="img"
+                     aria-label="Colección Pavo Real">
+                </div>
+                <div class="t4-banner-text">
+                    <div class="t4-banner-eyebrow">Colección Pavo Real</div>
+                    <h2 class="t4-banner-title">El nuevo verano,<br/>de la mano de PJMS.</h2>
+                    <p>Pijamas, kimonos y sets de algodón estampados a mano en Santiago. Una colección hecha para quedarse en casa con estilo.</p>
+                    <a href="/shop" class="t4-banner-cta">
+                        Ver colección
+                        <svg viewBox="0 0 24 12" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M1 6h21M17 1l5 5-5 5"/>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </template>
+</odoo>

@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="s_t4_categories" name="Taller4 Categorías">
+        <section class="s_t4_categories t4-section" data-snippet="s_t4_categories">
+            <div class="t4-section-head">
+                <div>
+                    <div class="t4-section-eyebrow">Compra por categoría</div>
+                    <h2 class="t4-section-title">Encuentra lo que <em>buscas</em></h2>
+                </div>
+                <a class="t4-section-link" href="/shop">
+                    Ver todas
+                    <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="m9 6 6 6-6 6"/>
+                    </svg>
+                </a>
+            </div>
+            <div class="t4-cats">
+                <a class="t4-cat" href="/shop?categ_id=1">
+                    <div class="t4-cat-img">
+                        <img src="/web_taller4/static/src/img/cat-mujer.jpg" alt="Mujer" loading="lazy"/>
+                    </div>
+                    <div class="t4-cat-label">
+                        <div>
+                            <span>Mujer</span>
+                            <div class="t4-cat-count">420 productos</div>
+                        </div>
+                        <span class="t4-cat-arrow">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="m9 6 6 6-6 6"/>
+                            </svg>
+                        </span>
+                    </div>
+                </a>
+                <a class="t4-cat" href="/shop?categ_id=2">
+                    <div class="t4-cat-img">
+                        <img src="/web_taller4/static/src/img/cat-hombre.jpg" alt="Hombre" loading="lazy"/>
+                    </div>
+                    <div class="t4-cat-label">
+                        <div>
+                            <span>Hombre</span>
+                            <div class="t4-cat-count">184 productos</div>
+                        </div>
+                        <span class="t4-cat-arrow">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="m9 6 6 6-6 6"/>
+                            </svg>
+                        </span>
+                    </div>
+                </a>
+                <a class="t4-cat" href="/shop?categ_id=3">
+                    <div class="t4-cat-img">
+                        <img src="/web_taller4/static/src/img/cat-casa.jpg" alt="Casa" loading="lazy"/>
+                    </div>
+                    <div class="t4-cat-label">
+                        <div>
+                            <span>Casa</span>
+                            <div class="t4-cat-count">256 productos</div>
+                        </div>
+                        <span class="t4-cat-arrow">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="m9 6 6 6-6 6"/>
+                            </svg>
+                        </span>
+                    </div>
+                </a>
+                <a class="t4-cat" href="/shop?categ_id=4">
+                    <div class="t4-cat-img">
+                        <img src="/web_taller4/static/src/img/cat-joyas.jpg" alt="Joyas" loading="lazy"/>
+                    </div>
+                    <div class="t4-cat-label">
+                        <div>
+                            <span>Joyas</span>
+                            <div class="t4-cat-count">312 productos</div>
+                        </div>
+                        <span class="t4-cat-arrow">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="m9 6 6 6-6 6"/>
+                            </svg>
+                        </span>
+                    </div>
+                </a>
+                <a class="t4-cat" href="/shop?categ_id=5">
+                    <div class="t4-cat-img">
+                        <img src="/web_taller4/static/src/img/cat-infantil.jpg" alt="Infantil" loading="lazy"/>
+                    </div>
+                    <div class="t4-cat-label">
+                        <div>
+                            <span>Infantil</span>
+                            <div class="t4-cat-count">98 productos</div>
+                        </div>
+                        <span class="t4-cat-arrow">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="m9 6 6 6-6 6"/>
+                            </svg>
+                        </span>
+                    </div>
+                </a>
+                <a class="t4-cat" href="/shop?categ_id=6">
+                    <div class="t4-cat-img">
+                        <img src="/web_taller4/static/src/img/cat-manualidades.jpg" alt="Manualidades" loading="lazy"/>
+                    </div>
+                    <div class="t4-cat-label">
+                        <div>
+                            <span>Manualidades</span>
+                            <div class="t4-cat-count">147 productos</div>
+                        </div>
+                        <span class="t4-cat-arrow">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="m9 6 6 6-6 6"/>
+                            </svg>
+                        </span>
+                    </div>
+                </a>
+            </div>
+        </section>
+    </template>
+</odoo>

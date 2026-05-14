@@ -1,0 +1,73 @@
+// ============================================================
+// Página /marcas — Listado dinámico desde method_minori.marcas
+// ============================================================
+.t4-brands-page {
+    background: var(--t4-warm-cream);
+    padding: clamp(56px, 7vw, 96px) var(--t4-page-pad);
+}
+
+.t4-brands-page-inner {
+    max-width: var(--t4-page-max);
+    margin: 0 auto;
+}
+
+.t4-brands-page .t4-section-head {
+    margin-bottom: 56px;
+}
+
+.t4-brands-page .t4-brand-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+
+    @media (max-width: 1100px) { grid-template-columns: repeat(3, 1fr); }
+    @media (max-width: 820px)  { grid-template-columns: repeat(2, 1fr); }
+}
+
+.t4-brands-page .t4-brand-cell {
+    background: var(--t4-paper);
+    border: 1px solid var(--t4-border);
+    aspect-ratio: 1 / 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    padding: 24px;
+    text-decoration: none;
+    color: var(--t4-fg-strong);
+    transition: transform 0.2s cubic-bezier(0.2, 0, 0, 1),
+                border-color 0.2s,
+                box-shadow 0.2s;
+
+    &:hover {
+        transform: translateY(-2px);
+        border-color: var(--t4-accent);
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.06);
+        color: var(--t4-accent);
+    }
+}
+
+.t4-brand-img {
+    max-width: 70%;
+    max-height: 60%;
+    object-fit: contain;
+    filter: grayscale(0.15);
+    transition: filter 0.2s;
+
+    .t4-brand-cell:hover & { filter: grayscale(0); }
+}
+
+.t4-brand-name {
+    font: 700 var(--t4-fs-12) / 1 var(--t4-font-sans);
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.t4-brands-empty {
+    text-align: center;
+    font: 400 var(--t4-fs-14) / 1.6 var(--t4-font-sans);
+    color: var(--t4-fg-faint);
+    padding: 60px 0;
+}

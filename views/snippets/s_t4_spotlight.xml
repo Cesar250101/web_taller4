@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="s_t4_spotlight" name="Taller4 Marca Spotlight">
+        <section class="s_t4_spotlight t4-spotlight" data-snippet="s_t4_spotlight">
+            <div class="t4-spotlight-inner">
+                <div class="t4-spotlight-photo"
+                     style="background-image: url('/web_taller4/static/src/img/spotlight-marca.jpg');">
+                    <span class="badge">Marca del mes</span>
+                </div>
+                <div class="t4-spotlight-text">
+                    <div class="t4-spotlight-brand">Delfina · Diseño desde Ñuñoa</div>
+                    <h2 class="t4-spotlight-title">"Diseñamos para vestir el día a día con cariño."</h2>
+                    <p class="t4-spotlight-quote">Detrás de cada prenda hay un taller pequeño, telas naturales y manos chilenas. Delfina lleva ocho años haciendo ropa de mujer que dura, se hereda y se cuida.</p>
+                    <dl class="t4-spotlight-meta">
+                        <div>
+                            <dt>Fundado</dt>
+                            <dd>2018</dd>
+                        </div>
+                        <div>
+                            <dt>Origen</dt>
+                            <dd>Santiago, Chile</dd>
+                        </div>
+                        <div>
+                            <dt>Categoría</dt>
+                            <dd>Moda Mujer</dd>
+                        </div>
+                    </dl>
+                    <a href="/shop" class="t4-spotlight-cta">
+                        Conocer a Delfina
+                        <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="m9 6 6 6-6 6"/>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </template>
+</odoo>

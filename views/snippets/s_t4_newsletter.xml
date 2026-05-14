@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="s_t4_newsletter" name="Taller4 Newsletter">
+        <section class="s_t4_newsletter t4-newsletter" data-snippet="s_t4_newsletter">
+            <div class="t4-newsletter-inner">
+                <div>
+                    <div class="t4-newsletter-eyebrow">Inscríbete en nuestro newsletter</div>
+                    <h2 class="t4-newsletter-title">¡Sé el primero en enterarte!</h2>
+                    <p class="t4-newsletter-sub">Descuentos, beneficios, concursos y las novedades de las marcas — sin spam, con cariño. ❤</p>
+                </div>
+                <div>
+                    <form class="t4-newsletter-form" action="/contactus" method="post">
+                        <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()"/>
+                        <input type="email" name="email_from" required="required"
+                               placeholder="Introduce tu correo electrónico"
+                               aria-label="Correo electrónico"/>
+                        <button type="submit">Suscribirme</button>
+                    </form>
+                    <div class="t4-newsletter-fine">Te enviaremos un mail a la semana, máximo. Puedes darte de baja cuando quieras.</div>
+                </div>
+            </div>
+        </section>
+    </template>
+</odoo>

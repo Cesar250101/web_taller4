@@ -1,0 +1,66 @@
+{
+    'name': 'Web Taller4',
+    'version': '16.0.1.0.0',
+    'summary': 'Sitio web del marketplace chileno Taller4',
+    'description': 'Módulo que implementa el sitio web Taller4 con snippets reutilizables y override visual de website_sale.',
+    'category': 'Website',
+    'license': 'LGPL-3',
+    'author': 'Method',
+    'depends': [
+        'website',
+        'website_sale',
+    ],
+    'data': [
+        'security/ir.model.access.csv',
+        'data/website_data.xml',
+        'views/layout/t4_header.xml',
+        'views/layout/t4_footer.xml',
+        'views/snippets/s_t4_hero.xml',
+        'views/snippets/s_t4_categories.xml',
+        'views/snippets/s_t4_top_sellers.xml',
+        'views/snippets/s_t4_value.xml',
+        'views/snippets/s_t4_mid_banner.xml',
+        'views/snippets/s_t4_brands.xml',
+        'views/snippets/s_t4_spotlight.xml',
+        'views/snippets/s_t4_instagram.xml',
+        'views/snippets/s_t4_newsletter.xml',
+        'views/snippets/snippets.xml',
+        'views/pages/home.xml',
+        'views/pages/marcas.xml',
+        'views/pages/contacto.xml',
+        'views/pages/devoluciones.xml',
+        'views/website_sale_templates.xml',
+    ],
+    'assets': {
+        'web.assets_frontend': [
+            # Variables bootstrap — debe ir primero
+            ('prepend', 'web_taller4/static/src/scss/primary_variables.scss'),
+            # Tokens CSS y estilos base
+            'web_taller4/static/src/scss/t4_tokens.scss',
+            'web_taller4/static/src/scss/t4_layout.scss',
+            'web_taller4/static/src/scss/t4_section_common.scss',
+            # Snippets
+            'web_taller4/static/src/scss/snippets/s_t4_hero.scss',
+            'web_taller4/static/src/scss/snippets/s_t4_categories.scss',
+            'web_taller4/static/src/scss/snippets/s_t4_top_sellers.scss',
+            'web_taller4/static/src/scss/snippets/s_t4_value.scss',
+            'web_taller4/static/src/scss/snippets/s_t4_mid_banner.scss',
+            'web_taller4/static/src/scss/snippets/s_t4_brands.scss',
+            'web_taller4/static/src/scss/snippets/s_t4_spotlight.scss',
+            'web_taller4/static/src/scss/snippets/s_t4_instagram.scss',
+            'web_taller4/static/src/scss/snippets/s_t4_newsletter.scss',
+            # Páginas
+            'web_taller4/static/src/scss/pages/marcas.scss',
+            'web_taller4/static/src/scss/pages/contacto.scss',
+            'web_taller4/static/src/scss/pages/doc.scss',
+            # eCommerce override
+            'web_taller4/static/src/scss/website_sale.scss',
+            # JavaScript
+            'web_taller4/static/src/js/snippets/s_t4_hero/000.js',
+        ],
+    },
+    'installable': True,
+    'application': False,
+    'auto_install': False,
+    'post_init_hook': 'post_init_hook',
+}

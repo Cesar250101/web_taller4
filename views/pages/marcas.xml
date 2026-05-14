@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="t4_marcas_page" name="Taller4 — Marcas">
+        <t t-call="website.layout">
+            <t t-set="pageName" t-value="'marcas'"/>
+            <div id="wrap" class="t4-site">
+                <section class="t4-brands-page">
+                    <div class="t4-brands-page-inner">
+                        <div class="t4-section-head centered">
+                            <div class="t4-section-eyebrow">Nuestras Marcas</div>
+                            <h2 class="t4-section-title">Diseño chileno, en <em>buena compañía</em></h2>
+                            <p class="t4-section-sub">Conoce las marcas que dan vida a Taller4.</p>
+                        </div>
+
+                        <t t-if="marcas">
+                            <div class="t4-brand-grid">
+                                <a t-foreach="marcas" t-as="marca"
+                                   class="t4-brand-cell"
+                                   t-att-href="'/shop?marca_id=%s' % marca.id"
+                                   t-att-aria-label="marca.name">
+                                    <img class="t4-brand-img"
+                                         t-att-src="'/web/image/method_minori.marcas/%s/marca_imagen' % marca.id"
+                                         t-att-alt="marca.name"
+                                         loading="lazy"/>
+                                    <span class="t4-brand-name" t-esc="marca.name"/>
+                                </a>
+                            </div>
+                        </t>
+                        <t t-else="">
+                            <p class="t4-brands-empty">Aún no hay marcas publicadas.</p>
+                        </t>
+                    </div>
+                </section>
+            </div>
+        </t>
+    </template>
+
+</odoo>

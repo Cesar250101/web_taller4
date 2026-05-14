@@ -1,0 +1,33 @@
+// ---- Instagram Feed ----
+.s_t4_instagram.t4-section {
+    .t4-ig-grid {
+        display: grid;
+        grid-template-columns: repeat(6, 1fr);
+        gap: 6px;
+
+        @media (max-width: 1100px) { grid-template-columns: repeat(3, 1fr); }
+    }
+
+    .t4-ig-cell {
+        aspect-ratio: 1;
+        overflow: hidden;
+        position: relative;
+        background-size: cover;
+        background-position: center;
+        display: block;
+
+        &::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: rgba(31, 32, 36, 0.6);
+            opacity: 0;
+            transition: opacity 0.2s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        &:hover::after { opacity: 1; }
+    }
+}

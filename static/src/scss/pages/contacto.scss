@@ -1,0 +1,227 @@
+// ============================================================
+// Página /contacto — Taller4
+// ============================================================
+.t4-contact {
+    background: var(--t4-paper);
+    padding: clamp(32px, 5vw, 56px) var(--t4-page-pad) clamp(40px, 6vw, 72px);
+}
+
+.t4-contact-inner {
+    max-width: var(--t4-page-max);
+    margin: 0 auto;
+}
+
+// ---- Breadcrumb ----
+.t4-breadcrumb {
+    font: 700 var(--t4-fs-12) / 1 var(--t4-font-sans);
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--t4-fg-faint);
+    margin-bottom: 24px;
+
+    a {
+        color: var(--t4-fg-faint);
+        text-decoration: none;
+        transition: color 0.15s;
+
+        &:hover { color: var(--t4-accent); }
+    }
+    .sep { margin: 0 8px; }
+    .current { color: var(--t4-fg-strong); }
+}
+
+.t4-contact-title {
+    font: 900 clamp(28px, 3.5vw, 40px) / 1 var(--t4-font-sans);
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--t4-ink-900);
+    margin: 0 0 12px;
+}
+
+.t4-contact-divider {
+    border: 0;
+    border-top: 1px solid var(--t4-border);
+    margin: 0 0 40px;
+}
+
+// ---- Grid info / form ----
+.t4-contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 64px;
+
+    @media (max-width: 820px) {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+}
+
+// ---- Bloques de info ----
+.t4-contact-block {
+    margin-bottom: 24px;
+
+    h3 {
+        font: 700 var(--t4-fs-14) / 1.2 var(--t4-font-sans);
+        color: var(--t4-fg-strong);
+        margin: 0 0 4px;
+    }
+
+    p {
+        font: 400 var(--t4-fs-14) / 1.6 var(--t4-font-sans);
+        color: var(--t4-fg);
+        margin: 0;
+
+        a { color: var(--t4-fg); text-decoration: none; &:hover { color: var(--t4-accent); } }
+    }
+}
+
+.t4-contact-map {
+    margin-top: 24px;
+
+    iframe {
+        display: block;
+        width: 100%;
+        max-width: 360px;
+        border: 1px solid var(--t4-border);
+    }
+}
+
+.t4-contact-map-link {
+    display: inline-block;
+    margin-top: 12px;
+    font: 700 italic var(--t4-fs-13) / 1 var(--t4-font-sans);
+    color: var(--t4-fg-strong);
+    text-decoration: none;
+
+    &:hover { color: var(--t4-accent); }
+}
+
+// ---- Formulario ----
+.t4-contact-form { display: flex; flex-direction: column; gap: 18px; }
+
+.t4-form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+
+    label {
+        font: 700 var(--t4-fs-14) / 1 var(--t4-font-sans);
+        color: var(--t4-fg-strong);
+    }
+
+    input,
+    textarea {
+        font: 400 var(--t4-fs-14) / 1.4 var(--t4-font-sans);
+        color: var(--t4-fg);
+        background: var(--t4-paper);
+        border: 0;
+        border-bottom: 1px solid var(--t4-border);
+        border-radius: 0;
+        padding: 8px 0;
+        outline: none;
+        transition: border-color 0.15s;
+
+        &::placeholder { color: var(--t4-fg-faint); }
+        &:focus { border-bottom-color: var(--t4-accent); }
+    }
+
+    textarea { resize: vertical; min-height: 120px; border: 1px solid var(--t4-border); padding: 10px; }
+}
+
+.t4-contact-submit {
+    align-self: flex-start;
+    margin-top: 12px;
+    background: var(--t4-ink-900);
+    color: white;
+    border: 0;
+    border-radius: 0;
+    padding: 14px 28px;
+    font: 700 var(--t4-fs-13) / 1 var(--t4-font-sans);
+    letter-spacing: 0.08em;
+    text-transform: none;
+    cursor: pointer;
+    transition: background 0.15s;
+
+    &:hover { background: var(--t4-accent); }
+}
+
+// ---- Newsletter inferior ----
+.t4-contact-newsletter {
+    margin-top: clamp(56px, 7vw, 88px);
+    padding-top: 40px;
+    border-top: 1px solid var(--t4-border);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 48px;
+    align-items: start;
+
+    @media (max-width: 820px) {
+        grid-template-columns: 1fr;
+        gap: 24px;
+    }
+}
+
+.t4-contact-newsletter-text {
+    h2 {
+        font: 900 clamp(22px, 2.4vw, 28px) / 1.1 var(--t4-font-sans);
+        letter-spacing: 0.02em;
+        color: var(--t4-ink-900);
+        margin: 0 0 8px;
+    }
+    p {
+        font: 400 var(--t4-fs-14) / 1.5 var(--t4-font-sans);
+        color: var(--t4-fg);
+        margin: 0;
+    }
+}
+
+.t4-newsletter-inline {
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid var(--t4-fg-strong);
+    padding-bottom: 6px;
+
+    input {
+        flex: 1;
+        border: 0;
+        background: transparent;
+        outline: none;
+        font: 400 var(--t4-fs-14) / 1.4 var(--t4-font-sans);
+        padding: 6px 0;
+
+        &::placeholder { color: var(--t4-fg-faint); }
+    }
+
+    button {
+        background: transparent;
+        border: 0;
+        cursor: pointer;
+        font: 700 var(--t4-fs-14) / 1 var(--t4-font-sans);
+        color: var(--t4-fg-strong);
+        padding: 6px 0 6px 16px;
+        transition: color 0.15s;
+
+        &:hover { color: var(--t4-accent); }
+    }
+}
+
+.t4-contact-social {
+    margin-top: 16px;
+    display: flex;
+    gap: 14px;
+
+    a {
+        width: 32px;
+        height: 32px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--t4-fg-strong);
+        text-decoration: none;
+        transition: color 0.15s;
+
+        &:hover { color: var(--t4-accent); }
+
+        svg { width: 18px; height: 18px; }
+    }
+}

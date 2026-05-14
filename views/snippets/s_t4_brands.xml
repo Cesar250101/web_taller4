@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="s_t4_brands" name="Taller4 Marcas">
+        <section class="s_t4_brands t4-brands" data-snippet="s_t4_brands">
+            <div class="t4-brands-inner">
+                <div class="t4-section-head centered">
+                    <div class="t4-section-eyebrow">Nuestras Marcas</div>
+                    <h2 class="t4-section-title">Diseño chileno, en <em>buena compañía</em></h2>
+                </div>
+                <div class="t4-brand-grid">
+                    <a class="t4-brand-cell" href="/shop" aria-label="Delfina">
+                        <div class="t4-brand-logo script">
+                            <span class="name">Delfina</span>
+                            <span class="tagline">Marca chilena</span>
+                        </div>
+                    </a>
+                    <a class="t4-brand-cell" href="/shop" aria-label="Raiquen">
+                        <div class="t4-brand-logo condensed">
+                            <span class="name">Raiquen</span>
+                            <span class="tagline">Marca chilena</span>
+                        </div>
+                    </a>
+                    <a class="t4-brand-cell" href="/shop" aria-label="Provence">
+                        <div class="t4-brand-logo serif">
+                            <span class="name">Provence</span>
+                            <span class="tagline">Marca chilena</span>
+                        </div>
+                    </a>
+                    <a class="t4-brand-cell" href="/shop" aria-label="Evolve">
+                        <div class="t4-brand-logo thin">
+                            <span class="name">Evolve</span>
+                            <span class="tagline">Marca chilena</span>
+                        </div>
+                    </a>
+                    <a class="t4-brand-cell" href="/shop" aria-label="De Cleme">
+                        <div class="t4-brand-logo handwritten">
+                            <span class="name">De Cleme</span>
+                            <span class="tagline">Marca chilena</span>
+                        </div>
+                    </a>
+                    <a class="t4-brand-cell" href="/shop" aria-label="Other Owner">
+                        <div class="t4-brand-logo stack">
+                            <span class="name">Other Owner<b>RESALE</b></span>
+                        </div>
+                    </a>
+                    <a class="t4-brand-cell" href="/shop" aria-label="PJMS">
+                        <div class="t4-brand-logo boxed">
+                            <span class="name">PJMS</span>
+                        </div>
+                    </a>
+                    <a class="t4-brand-cell" href="/shop" aria-label="Ana Paula">
+                        <div class="t4-brand-logo bold">
+                            <span class="name">Ana Paula</span>
+                            <span class="tagline">Marca chilena</span>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </template>
+</odoo>

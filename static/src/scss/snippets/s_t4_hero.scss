@@ -1,0 +1,153 @@
+// ---- Hero Carousel ----
+.s_t4_hero.t4-hero {
+    position: relative;
+    height: clamp(480px, 78vh, 760px);
+    overflow: hidden;
+    background: var(--t4-ink-900);
+
+    .t4-hero-slide {
+        position: absolute;
+        inset: 0;
+        background-size: cover;
+        background-position: center;
+        opacity: 0;
+        transition: opacity 0.8s cubic-bezier(0.2, 0, 0, 1);
+
+        &.active { opacity: 1; }
+
+        &::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(180deg, rgba(0, 0, 0, 0.05) 0%, rgba(0, 0, 0, 0.55) 100%);
+        }
+    }
+
+    .t4-hero-content {
+        position: absolute;
+        inset: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        padding: 0 var(--t4-page-pad) clamp(48px, 8vh, 96px);
+        max-width: var(--t4-page-max);
+        margin: 0 auto;
+        left: 0;
+        right: 0;
+        z-index: 2;
+    }
+
+    .t4-hero-eyebrow {
+        font: 700 var(--t4-fs-12) / 1 var(--t4-font-sans);
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+        color: rgba(255, 255, 255, 0.85);
+        margin-bottom: 16px;
+        display: flex;
+        align-items: center;
+        gap: 12px;
+
+        &::before {
+            content: '';
+            width: 32px;
+            height: 1px;
+            background: var(--t4-accent);
+        }
+    }
+
+    .t4-hero-title {
+        font: 700 clamp(34px, 5.4vw, 64px) / 1.05 var(--t4-font-sans);
+        letter-spacing: -0.015em;
+        color: white;
+        margin: 0 0 24px;
+        max-width: 720px;
+
+        em { font-style: normal; color: var(--t4-accent); }
+    }
+
+    .t4-hero-sub {
+        font: 400 var(--t4-fs-16) / 1.5 var(--t4-font-sans);
+        color: rgba(255, 255, 255, 0.88);
+        margin: 0 0 28px;
+        max-width: 480px;
+    }
+
+    .t4-hero-cta {
+        display: inline-flex;
+        align-items: center;
+        gap: 12px;
+        background: white;
+        color: var(--t4-ink-900);
+        padding: 16px 26px;
+        font: 700 var(--t4-fs-14) / 1 var(--t4-font-sans);
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+        border: 0;
+        text-decoration: none;
+        align-self: flex-start;
+        transition: background 0.15s, color 0.15s, transform 0.12s;
+
+        &:hover { background: var(--t4-accent); color: white; }
+        &:active { transform: translateY(1px); }
+
+        svg { width: 18px; height: 12px; }
+    }
+
+    .t4-hero-arrow {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 52px;
+        height: 52px;
+        background: rgba(255, 255, 255, 0.12);
+        border: 1px solid rgba(255, 255, 255, 0.4);
+        color: white;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 5;
+        cursor: pointer;
+        transition: background 0.15s, border-color 0.15s;
+
+        &:hover { background: var(--t4-accent); border-color: var(--t4-accent); }
+        &.prev { left: 24px; }
+        &.next { right: 24px; }
+
+        svg { width: 18px; height: 18px; stroke: currentColor; fill: none; stroke-width: 2; }
+    }
+
+    .t4-hero-dots {
+        position: absolute;
+        bottom: 28px;
+        left: 50%;
+        transform: translateX(-50%);
+        display: flex;
+        gap: 10px;
+        z-index: 5;
+    }
+
+    .t4-hero-dot {
+        width: 28px;
+        height: 2px;
+        background: rgba(255, 255, 255, 0.4);
+        border: 0;
+        cursor: pointer;
+        transition: background 0.15s, height 0.15s;
+
+        &.active { background: white; height: 3px; }
+    }
+
+    .t4-hero-slide-counter {
+        position: absolute;
+        bottom: 26px;
+        right: var(--t4-page-pad);
+        font: 700 var(--t4-fs-13) / 1 var(--t4-font-sans);
+        letter-spacing: 0.1em;
+        color: white;
+        z-index: 5;
+        font-variant-numeric: tabular-nums;
+
+        b { font-size: 15px; }
+        span { color: rgba(255, 255, 255, 0.6); margin: 0 6px; }
+    }
+}

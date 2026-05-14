@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Registro de snippets en el panel del editor de Odoo -->
+    <template id="snippets_taller4" inherit_id="website.snippets" name="Taller4 Snippets">
+        <xpath expr="//div[@id='snippet_structure']" position="before">
+            <div id="snippet_taller4" class="o_panel">
+                <div class="o_panel_header">Taller4</div>
+                <div class="o_panel_body">
+                    <t t-snippet="web_taller4.s_t4_hero"
+                       string="Hero Carousel"
+                       t-thumbnail="/web_taller4/static/src/img/thumb_hero.svg">
+                        <keywords>hero, carousel, portada, banner principal</keywords>
+                    </t>
+                    <t t-snippet="web_taller4.s_t4_categories"
+                       string="Categorías"
+                       t-thumbnail="/web_taller4/static/src/img/thumb_categories.svg">
+                        <keywords>categorías, shop, tienda, productos</keywords>
+                    </t>
+                    <t t-snippet="web_taller4.s_t4_top_sellers"
+                       string="Más Vendidos"
+                       t-thumbnail="/web_taller4/static/src/img/thumb_topsellers.svg">
+                        <keywords>productos, vendidos, destacados, shop</keywords>
+                    </t>
+                    <t t-snippet="web_taller4.s_t4_value"
+                       string="Propuesta de Valor"
+                       t-thumbnail="/web_taller4/static/src/img/thumb_value.svg">
+                        <keywords>valor, beneficios, ventajas, iconos</keywords>
+                    </t>
+                    <t t-snippet="web_taller4.s_t4_mid_banner"
+                       string="Banner Editorial"
+                       t-thumbnail="/web_taller4/static/src/img/thumb_banner.svg">
+                        <keywords>banner, editorial, colección, cta</keywords>
+                    </t>
+                    <t t-snippet="web_taller4.s_t4_brands"
+                       string="Marcas"
+                       t-thumbnail="/web_taller4/static/src/img/thumb_brands.svg">
+                        <keywords>marcas, logos, partners, chilenas</keywords>
+                    </t>
+                    <t t-snippet="web_taller4.s_t4_spotlight"
+                       string="Marca Spotlight"
+                       t-thumbnail="/web_taller4/static/src/img/thumb_spotlight.svg">
+                        <keywords>marca, spotlight, historia, editorial</keywords>
+                    </t>
+                    <t t-snippet="web_taller4.s_t4_instagram"
+                       string="Instagram Feed"
+                       t-thumbnail="/web_taller4/static/src/img/thumb_instagram.svg">
+                        <keywords>instagram, redes sociales, fotos, feed</keywords>
+                    </t>
+                    <t t-snippet="web_taller4.s_t4_newsletter"
+                       string="Newsletter"
+                       t-thumbnail="/web_taller4/static/src/img/thumb_newsletter.svg">
+                        <keywords>newsletter, suscripción, email, correo</keywords>
+                    </t>
+                </div>
+            </div>
+        </xpath>
+    </template>
+</odoo>

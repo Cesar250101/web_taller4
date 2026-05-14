@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Override visual de la tienda: agrega wrapper .t4-shop-wrapper
+         para aislar los estilos al sitio Taller4.
+         NO se modifica lógica de precios, carrito ni checkout. -->
+
+    <template id="t4_shop_products" inherit_id="website_sale.products" name="Taller4 Shop">
+        <xpath expr="//div[hasclass('container')]" position="attributes">
+            <attribute name="class" add="t4-shop-wrapper" separator=" "/>
+        </xpath>
+        <!-- Encabezado de marca cuando se filtra por ?marca_id=X -->
+        <xpath expr="//div[hasclass('products_header')]" position="before">
+            <div t-if="t4_marca" class="t4-shop-marca-head">
+                <a href="/marcas" class="t4-shop-marca-back">← Todas las marcas</a>
+                <div class="t4-shop-marca-inner">
+                    <img t-if="t4_marca.marca_imagen"
+                         class="t4-shop-marca-img"
+                         t-att-src="'/web/image/method_minori.marcas/%s/marca_imagen' % t4_marca.id"
+                         t-att-alt="t4_marca.name"/>
+                    <div class="t4-shop-marca-text">
+                        <span class="t4-shop-marca-eyebrow">Marca</span>
+                        <h1 class="t4-shop-marca-title">Productos de <em t-esc="t4_marca.name"/></h1>
+                    </div>
+                </div>
+            </div>
+        </xpath>
+    </template>
+
+    <!-- Tarjeta de producto: muestra la marca arriba del nombre -->
+    <template id="t4_products_item_marca" inherit_id="website_sale.products_item" name="Taller4 Marca en tarjeta">
+        <xpath expr="//h6[hasclass('o_wsale_products_item_title')]" position="before">
+            <div t-if="product.marca_id" class="t4-card-marca">
+                <a t-att-href="'/shop?marca_id=%s' % product.marca_id.id"
+                   t-esc="product.marca_id.name"/>
+            </div>
+        </xpath>
+    </template>
+
+    <template id="t4_shop_product" inherit_id="website_sale.product" name="Taller4 Producto">
+        <xpath expr="//div[@id='wrap']" position="attributes">
+            <attribute name="class" add="t4-shop-wrapper" separator=" "/>
+        </xpath>
+    </template>
+
+    <template id="t4_cart" inherit_id="website_sale.cart" name="Taller4 Carrito">
+        <xpath expr="//div[@id='wrap']" position="attributes">
+            <attribute name="class" add="t4-shop-wrapper" separator=" "/>
+        </xpath>
+    </template>
+
+    <template id="t4_checkout" inherit_id="website_sale.checkout" name="Taller4 Checkout">
+        <xpath expr="//div[@id='wrap']" position="attributes">
+            <attribute name="class" add="t4-shop-wrapper" separator=" "/>
+        </xpath>
+    </template>
+</odoo>

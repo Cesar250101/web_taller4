@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="s_t4_top_sellers" name="Taller4 Más Vendidos">
+        <section class="s_t4_top_sellers t4-section" data-snippet="s_t4_top_sellers">
+            <div class="t4-section-head">
+                <div>
+                    <div class="t4-section-eyebrow">Lo que está volando</div>
+                    <h2 class="t4-section-title">Más vendidos</h2>
+                </div>
+                <a class="t4-section-link" href="/shop">
+                    Ver todos
+                    <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="m9 6 6 6-6 6"/>
+                    </svg>
+                </a>
+            </div>
+            <div class="t4-products">
+                <article class="t4-product">
+                    <div class="t4-product-imgwrap">
+                        <span class="t4-product-tag">Nuevo</span>
+                        <img src="/web_taller4/static/src/img/prod-pyjama.jpg" alt="Pijama largo Pavo Real verde" loading="lazy"/>
+                        <a href="/shop" class="t4-product-add">Agregar al carrito</a>
+                    </div>
+                    <div class="t4-product-brand">PJMS</div>
+                    <div class="t4-product-name">Pijama largo Pavo Real verde</div>
+                    <div class="t4-product-price">$49.990</div>
+                </article>
+                <article class="t4-product">
+                    <div class="t4-product-imgwrap">
+                        <img src="/web_taller4/static/src/img/prod-bracelet.jpg" alt="Brazalete de cuero trenzado" loading="lazy"/>
+                        <a href="/shop" class="t4-product-add">Agregar al carrito</a>
+                    </div>
+                    <div class="t4-product-brand">Raiquen</div>
+                    <div class="t4-product-name">Brazalete de cuero trenzado</div>
+                    <div class="t4-product-price">$22.990</div>
+                </article>
+                <article class="t4-product">
+                    <div class="t4-product-imgwrap">
+                        <span class="t4-product-tag">-20%</span>
+                        <img src="/web_taller4/static/src/img/prod-diffuser.jpg" alt="Difusor aromático Ámbar 250ml" loading="lazy"/>
+                        <a href="/shop" class="t4-product-add">Agregar al carrito</a>
+                    </div>
+                    <div class="t4-product-brand">Provence</div>
+                    <div class="t4-product-name">Difusor aromático Ámbar 250ml</div>
+                    <div class="t4-product-price">$19.990 <s>$24.990</s></div>
+                </article>
+                <article class="t4-product">
+                    <div class="t4-product-imgwrap">
+                        <span class="t4-product-tag muted">Top ventas</span>
+                        <img src="/web_taller4/static/src/img/prod-vestido.jpg" alt="Vestido lino bordado a mano" loading="lazy"/>
+                        <a href="/shop" class="t4-product-add">Agregar al carrito</a>
+                    </div>
+                    <div class="t4-product-brand">Delfina</div>
+                    <div class="t4-product-name">Vestido lino bordado a mano</div>
+                    <div class="t4-product-price">$64.990</div>
+                </article>
+            </div>
+        </section>
+    </template>
+</odoo>

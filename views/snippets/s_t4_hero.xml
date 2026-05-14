@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="s_t4_hero" name="Taller4 Hero Carousel">
+        <section class="s_t4_hero t4-hero" data-snippet="s_t4_hero" aria-roledescription="carousel">
+            <!-- Slides -->
+            <div class="t4-hero-slide active"
+                 style="background-image: url('/web_taller4/static/src/img/hero-1.jpg');"
+                 data-slide="0">
+            </div>
+            <div class="t4-hero-slide"
+                 style="background-image: url('/web_taller4/static/src/img/hero-2.jpg');"
+                 data-slide="1">
+            </div>
+            <div class="t4-hero-slide"
+                 style="background-image: url('/web_taller4/static/src/img/hero-3.jpg');"
+                 data-slide="2">
+            </div>
+
+            <!-- Content -->
+            <div class="t4-hero-content">
+                <div class="t4-hero-eyebrow">Edición Otoño</div>
+                <h1 class="t4-hero-title">Creaciones <em>Chilenas</em> en un solo lugar</h1>
+                <p class="t4-hero-sub">Más de 20 marcas locales bajo un mismo techo. Ropa, joyas, accesorios y diseño para tu casa — con un solo despacho.</p>
+                <a href="/shop" class="t4-hero-cta">
+                    Ver todo
+                    <svg class="t4-hero-cta-arrow" viewBox="0 0 18 12" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M1 6h16M11 1l5 5-5 5"/>
+                    </svg>
+                </a>
+            </div>
+
+            <!-- Controles -->
+            <button class="t4-hero-arrow prev" aria-label="Slide anterior" data-hero-prev="1">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="m15 6-6 6 6 6"/>
+                </svg>
+            </button>
+            <button class="t4-hero-arrow next" aria-label="Slide siguiente" data-hero-next="1">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="m9 6 6 6-6 6"/>
+                </svg>
+            </button>
+
+            <!-- Dots -->
+            <div class="t4-hero-dots" role="tablist">
+                <button class="t4-hero-dot active" data-hero-dot="0" aria-label="Slide 1"/>
+                <button class="t4-hero-dot" data-hero-dot="1" aria-label="Slide 2"/>
+                <button class="t4-hero-dot" data-hero-dot="2" aria-label="Slide 3"/>
+            </div>
+
+            <!-- Counter -->
+            <div class="t4-hero-slide-counter">
+                <b class="t4-hero-current">01</b>
+                <span>/</span>
+                <span>03</span>
+            </div>
+        </section>
+    </template>
+</odoo>
