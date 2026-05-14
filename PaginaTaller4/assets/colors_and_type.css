@@ -1,0 +1,265 @@
+/* =============================================================
+   Taller4 Design System — Colors & Type
+   --------------------------------------------------------------
+   Taller4 is a curated Chilean marketplace storefront. The visual
+   system is deliberately quiet: a high-contrast monochrome palette
+   that lets the photography of the brands they carry do the talking.
+   A single warm-red accent (the "Desde Chile con Amor ❤️" heart)
+   is reserved for emotional flourishes and active states.
+   ============================================================= */
+
+/* -------------------------------------------------------------
+   1. COLOR TOKENS
+   ------------------------------------------------------------- */
+:root {
+  /* ---- Neutral scale (warm-cool black with a slight blue cast) ---- */
+  --t4-ink-900:    #1F2024;   /* top nav bar, deep ink, store-sign navy-black */
+  --t4-ink-800:    #2B2D31;   /* primary text (h1 / h2)                       */
+  --t4-ink-700:    #3A3D42;   /* body text                                    */
+  --t4-ink-600:    #5C5F66;   /* secondary text, meta, breadcrumbs            */
+  --t4-ink-500:    #8A8D93;   /* muted text, italic pull-quotes, placeholders */
+  --t4-ink-400:    #B5B7BC;   /* disabled, divider on dark                    */
+  --t4-ink-300:    #D9DBDF;   /* input borders                                */
+  --t4-ink-200:    #ECEDEF;   /* hairlines, dividers                          */
+  --t4-ink-100:    #F5F5F6;   /* subtle surface fill                          */
+  --t4-paper:      #FFFFFF;   /* page background                              */
+
+  /* ---- Accent — the "con Amor ❤" red ---- */
+  --t4-amor-600:   #C8232C;   /* hover / pressed                              */
+  --t4-amor-500:   #E63946;   /* primary accent (heart, map pin, active link) */
+  --t4-amor-100:   #FCE6E8;   /* tint                                         */
+
+  /* ---- Optional photography accent (from category imagery) ---- */
+  --t4-sky:        #B8D6DA;   /* the soft mint/teal of the Mujer studio shot  */
+  --t4-clay:       #B27149;   /* the leather / tan from the Hombre shot       */
+  --t4-moss:       #6B7A4F;   /* tropical green from pyjama set               */
+  --t4-cream:      #F2EDE4;   /* cream / linen                                */
+
+  /* ---- Semantic ---- */
+  --t4-bg:                  var(--t4-paper);
+  --t4-bg-inverse:          var(--t4-ink-900);
+  --t4-surface:             var(--t4-paper);
+  --t4-surface-muted:       var(--t4-ink-100);
+  --t4-fg:                  var(--t4-ink-700);
+  --t4-fg-strong:           var(--t4-ink-800);
+  --t4-fg-muted:            var(--t4-ink-600);
+  --t4-fg-faint:            var(--t4-ink-500);
+  --t4-fg-on-inverse:       var(--t4-paper);
+  --t4-border:              var(--t4-ink-200);
+  --t4-border-strong:       var(--t4-ink-300);
+  --t4-accent:              var(--t4-amor-500);
+  --t4-accent-strong:       var(--t4-amor-600);
+  --t4-link:                var(--t4-ink-800);
+  --t4-link-hover:          var(--t4-amor-500);
+  --t4-overlay-strip:       rgba(0,0,0,0.78);  /* black caption strip on hero */
+
+  /* ---- Elevation (sparse — Taller4 is flat) ---- */
+  --t4-shadow-1: 0 1px 2px rgba(31,32,36,0.06);
+  --t4-shadow-2: 0 6px 18px rgba(31,32,36,0.08);
+  --t4-shadow-pop: 0 12px 32px rgba(31,32,36,0.14);
+
+  /* ---- Radii (almost everything is square) ---- */
+  --t4-radius-0:  0px;     /* default — buttons, inputs, cards */
+  --t4-radius-1:  2px;     /* extremely subtle softening       */
+  --t4-radius-2:  4px;     /* tag chips                        */
+  --t4-radius-pill: 999px; /* rare — only floating UI          */
+
+  /* ---- Spacing (4px base) ---- */
+  --t4-space-1:  4px;
+  --t4-space-2:  8px;
+  --t4-space-3:  12px;
+  --t4-space-4:  16px;
+  --t4-space-5:  20px;
+  --t4-space-6:  24px;
+  --t4-space-8:  32px;
+  --t4-space-10: 40px;
+  --t4-space-12: 48px;
+  --t4-space-16: 64px;
+  --t4-space-20: 80px;
+  --t4-space-24: 96px;
+
+  /* ---- Type families ---- */
+  --t4-font-sans:    "Lato", "Helvetica Neue", Arial, sans-serif;
+  --t4-font-display: "Oswald", "Lato", Arial, sans-serif;  /* used SPARINGLY: the brand wordmark logo is custom-drawn — see /assets/logo-taller4-black.avif */
+  --t4-font-mono:    "IBM Plex Mono", ui-monospace, Menlo, monospace;
+
+  /* ---- Type scale ---- */
+  --t4-fs-12: 12px;
+  --t4-fs-13: 13px;
+  --t4-fs-14: 14px;
+  --t4-fs-15: 15px;
+  --t4-fs-16: 16px;
+  --t4-fs-18: 18px;
+  --t4-fs-20: 20px;
+  --t4-fs-24: 24px;
+  --t4-fs-28: 28px;
+  --t4-fs-32: 32px;
+  --t4-fs-40: 40px;
+  --t4-fs-48: 48px;
+}
+
+/* -------------------------------------------------------------
+   2. WEBFONT IMPORTS
+   --------------------------------------------------------------
+   Taller4 is built on a Shopify theme that loads Lato (body) +
+   appears to use a custom-drawn wordmark for the TALLER·4 logo.
+   We approximate with Lato and reserve Oswald for very rare
+   condensed-display moments. The actual logo is a static image.
+   FLAG: if the user has the original logo TTF or webfont files,
+   ask them to upload — we are otherwise relying on the bitmap.
+   ------------------------------------------------------------- */
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;0,900;1,400;1,700&family=Oswald:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap');
+
+/* -------------------------------------------------------------
+   3. BASELINE
+   ------------------------------------------------------------- */
+html, body {
+  background: var(--t4-bg);
+  color: var(--t4-fg);
+  font-family: var(--t4-font-sans);
+  font-size: var(--t4-fs-15);
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+/* -------------------------------------------------------------
+   4. SEMANTIC TYPE
+   ------------------------------------------------------------- */
+.t4-h1, h1.t4 {
+  font-family: var(--t4-font-sans);
+  font-weight: 700;
+  font-size: var(--t4-fs-32);
+  letter-spacing: -0.005em;
+  line-height: 1.15;
+  color: var(--t4-fg-strong);
+  margin: 0 0 var(--t4-space-4);
+}
+.t4-h2, h2.t4 {
+  font-family: var(--t4-font-sans);
+  font-weight: 700;
+  font-size: var(--t4-fs-24);
+  line-height: 1.2;
+  color: var(--t4-fg-strong);
+  margin: 0 0 var(--t4-space-3);
+}
+.t4-h3, h3.t4 {
+  font-family: var(--t4-font-sans);
+  font-weight: 700;
+  font-size: var(--t4-fs-18);
+  line-height: 1.3;
+  color: var(--t4-fg-strong);
+  margin: 0 0 var(--t4-space-2);
+}
+
+/* Section eyebrow — ALL CAPS bold sans, used as ¨SOBRE TALLER4¨ above page */
+.t4-eyebrow {
+  font-family: var(--t4-font-sans);
+  font-weight: 700;
+  font-size: var(--t4-fs-14);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--t4-fg-strong);
+}
+
+/* Nav link — small caps, light tracking */
+.t4-nav-link {
+  font-family: var(--t4-font-sans);
+  font-weight: 700;
+  font-size: var(--t4-fs-13);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--t4-fg-on-inverse);
+}
+
+/* Body */
+.t4-body, p.t4 {
+  font-family: var(--t4-font-sans);
+  font-weight: 400;
+  font-size: var(--t4-fs-15);
+  line-height: 1.6;
+  color: var(--t4-fg);
+}
+.t4-body-sm {
+  font-size: var(--t4-fs-13);
+  line-height: 1.55;
+  color: var(--t4-fg);
+}
+
+/* Italic pull-quote (Miguel Ruiz block on Sobre Nosotros) */
+.t4-quote {
+  font-family: var(--t4-font-sans);
+  font-style: italic;
+  font-weight: 400;
+  font-size: var(--t4-fs-14);
+  line-height: 1.55;
+  color: var(--t4-fg-faint);
+}
+.t4-quote-attribution {
+  font-family: var(--t4-font-sans);
+  font-style: italic;
+  font-weight: 400;
+  font-size: var(--t4-fs-13);
+  color: var(--t4-fg-faint);
+  margin-top: var(--t4-space-2);
+}
+
+/* Breadcrumb */
+.t4-crumbs {
+  font-family: var(--t4-font-sans);
+  font-weight: 700;
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--t4-fg-muted);
+}
+.t4-crumbs a { color: inherit; text-decoration: none; }
+.t4-crumbs a:hover { color: var(--t4-accent); }
+
+/* Category card label (white tag on photography) */
+.t4-cat-tag {
+  font-family: var(--t4-font-sans);
+  font-weight: 700;
+  font-size: var(--t4-fs-15);
+  color: var(--t4-fg-strong);
+  background: var(--t4-paper);
+  padding: var(--t4-space-2) var(--t4-space-4);
+  display: inline-block;
+}
+
+/* Hero caption strip (translucent black bar) */
+.t4-hero-strip {
+  font-family: var(--t4-font-sans);
+  font-weight: 700;
+  font-size: var(--t4-fs-16);
+  letter-spacing: 0.02em;
+  color: var(--t4-fg-on-inverse);
+  background: var(--t4-overlay-strip);
+  padding: var(--t4-space-2) var(--t4-space-4);
+  display: inline-block;
+}
+
+/* Footer column heading — uppercase bold, very small */
+.t4-footer-heading {
+  font-family: var(--t4-font-sans);
+  font-weight: 700;
+  font-size: var(--t4-fs-12);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--t4-fg-on-inverse);
+}
+
+/* Form label */
+.t4-label {
+  font-family: var(--t4-font-sans);
+  font-weight: 700;
+  font-size: var(--t4-fs-14);
+  color: var(--t4-fg-strong);
+}
+
+/* Link */
+a.t4 { color: var(--t4-link); text-decoration: none; }
+a.t4:hover { color: var(--t4-link-hover); }
+
+/* Mono — used sparingly for tickets / order numbers */
+.t4-mono { font-family: var(--t4-font-mono); font-size: var(--t4-fs-13); }
